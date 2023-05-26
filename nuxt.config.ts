@@ -37,6 +37,9 @@ export default defineNuxtConfig({
       routes: ['/'],
       ignore: ['/hi'],
     },
+    storage: {
+      data: { driver: 'vercelKV' },
+    },
   },
 
   app: {
