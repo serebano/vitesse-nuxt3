@@ -1,4 +1,9 @@
 <script setup lang="ts">
+const isDialogOpen = useDrawer()
+
+const click = () => {
+  isDialogOpen.value = false
+}
 const links = [
 //   {
 //   label: 'Profile',
@@ -10,22 +15,26 @@ const links = [
 
 {
   label: 'Download',
-  icon: 'i-heroicons-arrow-down-circle-20-solid',
-  to: '/'
+  icon: 'i-heroicons-arrow-down-circle',
+  to: '/',
+  click
 },{
   label: 'KV Vercel',
   icon: 'i-heroicons-beaker',
-  to: '/kv'
+  to: '/kv',
+  click
 },
 {
   label: 'Feedback',  
   icon: 'i-heroicons-envelope',
-  to: '/feedback'
+  to: '/feedback',
+  click
 },
 {
   label: 'About',
   icon: 'i-heroicons-information-circle',
-  to: '/about'
+  to: '/about',
+  click
 }]
 </script>
 
@@ -33,9 +42,9 @@ const links = [
   <UVerticalNavigation 
     :links="links"
     :ui="{
-      wrapper: '-ml-4',
-      padding: 'py-2  pr-4 pl-4',
-      size: 'text-base'
+      wrapper: '-ml-3',
+      padding: 'py-2.5  pr-4 pl-3',
+      size: 'text-md'
     }"
    />
 </template>

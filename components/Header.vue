@@ -22,7 +22,45 @@
       </div>
     </UContainer>
 
-    <TransitionRoot :show="isDialogOpen" as="template">
+    <USlideover side="left" v-model="isDialogOpen">
+      <!-- Content -->
+      <div
+              class="sticky top-0 border-b border-gray-900/10 dark:border-gray-50/[0.06] bg-white/75 dark:bg-gray-900/75 backdrop-blur z-10">
+              <UContainer>
+                <div class="flex items-center justify-between h-16">
+
+
+                  <div class="flex -mr-1.5">
+                    <UButton color="gray" variant="ghost" icon="i-heroicons-x-mark-20-solid" size="xl"
+                      @click="isDialogOpen = false" />
+                  </div>
+
+                  <!-- <HeaderLogo /> -->
+
+                </div>
+              </UContainer>
+            </div>
+
+            <div class="relative flex flex-col flex-1 h-[calc(100vh-4rem)] overflow-y-scroll ">
+            
+              <div class="flex-1">
+                <UContainer>
+                  <AsideNav class="p-4" />
+                </UContainer>
+
+              </div>
+
+              <div class="px-4 pb-4 backdrop-blur-sm sticky bottom-0">
+                <UContainer>
+                  <ThemeSelect />
+                </UContainer>
+              </div>
+
+
+          </div>
+    </USlideover>
+
+    <TransitionRoot :show="isDialogOpen2" as="template">
       <Dialog as="div" @close="isDialogOpen = false">
 
         <!-- Wrap your backdrop in a `TransitionChild`. -->
@@ -91,6 +129,7 @@ import { Dialog, DialogPanel, TransitionRoot, TransitionChild } from '@headlessu
 const isSearchModalOpen = ref(false)
 const colorMode = useColorMode()
 const isDialogOpen = useDrawer()
+const isDialogOpen2 = ref(false)
 
 //const isDialogOpen = ref(false)
 

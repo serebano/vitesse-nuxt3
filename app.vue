@@ -14,6 +14,8 @@ useHead({
 
 <template>
   <VitePwaManifest />
+  <NuxtLoadingIndicator />
+  <LazyNuxtLoadingIndicator />
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>

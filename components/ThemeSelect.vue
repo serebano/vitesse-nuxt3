@@ -13,7 +13,7 @@
         <template #label>
           <span class="flex-shrink-0 h-4 w-4 rounded-full" :style="{ backgroundColor: `${primary.hex}`}" />
 
-          
+          {{ primary.text }}
         </template>
 
         <template #option="{ option }">
@@ -36,7 +36,7 @@
       >
         <template #label>
           <span class="flex-shrink-0 h-4 w-4 rounded-full" :style="{ backgroundColor: `${gray.hex}`}" />
-
+          {{ gray.text }}
           
         </template>
 

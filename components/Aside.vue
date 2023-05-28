@@ -1,6 +1,6 @@
 <template>
-  <aside class="hidden py-8 overflow-y-auto lg:block lg:self-start lg:top-16 lg:max-h-[calc(100vh-64px)] lg:sticky lg:pr-8">
-    <div class="relative">
+  <aside class="hidden min-w-[240px] py-6 overflow-y-auto lg:block lg:self-start lg:top-16 h-[calc(100vh-64px)] lg:sticky lg:pr-8">
+    <div class="relative h-full">
       <!-- <div class="sticky top-0 pointer-events-none z-[1]">
         <div class="h-8 bg-white dark:bg-gray-900" />
         <div class="bg-white dark:bg-gray-900 relative pointer-events-auto">
@@ -22,7 +22,10 @@
       </div> -->
 
       <AsideNav />
+
     </div>
+    <ThemeSelect class="py-2 sticky bottom-0" />
+
   </aside>
 </template>
 
