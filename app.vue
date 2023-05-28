@@ -3,6 +3,12 @@ import { appName } from '~/constants'
 
 useHead({
   title: appName,
+  htmlAttrs: {
+    lang: 'en',
+  },
+  bodyAttrs: {
+    class: 'antialiased font-sans text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-900',
+  },
 })
 </script>
 
@@ -12,16 +18,3 @@ useHead({
     <NuxtPage />
   </NuxtLayout>
 </template>
-
-<style>
-html, body , #__nuxt{
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-}
-
-html.dark {
-  background: #000;
-  color: white;
-}
-</style>

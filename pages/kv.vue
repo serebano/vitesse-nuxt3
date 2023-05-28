@@ -3,29 +3,32 @@ const { data: pageVisits } = await useFetch(() => '/api/kv-demo')
 function refreshPage() {
   window.location.reload()
 }
+const enabled = ref(false)
 </script>
 
 <template>
   <main
     class="relative min-h-screen flex flex-col items-center justify-center py-10"
   >
+  <h1
+      class="from-black via-[#707070] to-[#ffffff] bg-gradient-to-br bg-clip-text pb-8 pt-4 text-center text-4xl font-medium tracking-tight text-transparent dark:from-white md:text-7xl"
+    >
+    Vercel KV Test
+    </h1>
     <a
       href="https://vercel.com"
       class="rounded-full bg-white/30 px-6 py-2 text-sm font-medium text-gray-600 shadow-sm ring-1 ring-gray-900/5 transition-all dark:bg-white/80 dark:text-black active:shadow-sm hover:shadow-lg"
     >
       Deploy your own to Vercel
     </a>
-    <h1
-      class="from-black via-[#707070] to-[#ffffff] bg-gradient-to-br bg-clip-text pb-8 pt-4 text-center text-4xl font-medium tracking-tight text-transparent dark:from-white md:text-7xl"
-    >
-      Vercel KV
-    </h1>
+
     <div
-      class="mx-auto max-w-xl w-full flex flex-col items-center rounded-lg bg-white/30 p-12 shadow-xl ring-1 ring-gray-900/5 backdrop-blur-lg dark:bg-white/10"
+      class="mx-auto mt-8 max-w-xl w-full flex flex-col items-center rounded-lg bg-white/30 p-12 shadow-xl ring-1 ring-gray-900/5 backdrop-blur-lg dark:bg-white/10"
     >
       <div class="mb-6 text-center text-lg">
         Displayed below is the total number of page views for this demo. Refresh
         the page and watch it increase!
+        <UAvatar src="https://avatars.githubusercontent.com/u/739984?v=4" alt="Avatar" />
       </div>
       <button
         class="mb-6 font-bold underline opacity-70 hover:opacity-100"
