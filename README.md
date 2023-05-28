@@ -3,7 +3,7 @@
 </p>
 
 <h2 align="center">
-<a href="https://github.com/antfu/vitesse">Vitesse</a> for Nuxt 3
+ttdl.app
 </h2><br>
 
 <pre align="center">
