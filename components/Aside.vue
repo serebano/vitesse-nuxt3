@@ -1,5 +1,5 @@
 <template>
-  <aside class="hidden min-w-[240px] py-6 overflow-y-auto lg:block lg:self-start lg:top-16 h-[calc(100vh-64px)] lg:sticky lg:pr-8">
+  <aside class="hidden mx-3 w-[240px] py-6 overflow-y-auto lg:block lg:self-start lg:top-16 h-[calc(100vh-64px)] lg:sticky ">
     <div class="relative h-full">
       <!-- <div class="sticky top-0 pointer-events-none z-[1]">
         <div class="h-8 bg-white dark:bg-gray-900" />

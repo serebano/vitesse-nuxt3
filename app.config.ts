@@ -3,7 +3,7 @@ export default defineAppConfig({
     primary: 'green',
     gray: 'zinc',
     container: {
-      padding: 'px-4  lg:px-8'
+      padding: 'px-3'
     },
     verticalNavigation: {
       "active": "text-gray-900 dark:text-white",

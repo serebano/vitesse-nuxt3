@@ -85,6 +85,7 @@ const gray = computed({
     return grayOptions.value.find(option => option.value === grayCookie.value)
   },
   set (option) {
+    console.log('GRAY-SET', option)
     grayCookie.value = option.value
   }
 })

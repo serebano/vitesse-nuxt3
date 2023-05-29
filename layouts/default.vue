@@ -1,10 +1,10 @@
 <template>
   <div>
     <Header />
-    <UContainer>
+    <UContainer class="flex">
       <Aside class="" />
 
-      <slot /> 
+      <UContainer><slot /> </UContainer>
     </UContainer>
   </div>
 </template>

@@ -2,16 +2,20 @@
   <header
     class="sticky top-0 z-[1]  w-full backdrop-blur flex-none border-b border-gray-900/10 dark:border-gray-50/[0.06] bg-white/75 dark:bg-gray-900/75">
     <UContainer>
-      <div class="flex items-center justify-between h-16">
+      <div class="flex items-center justify-between min-h-12">
 
-        <UButton square color="gray" class="lg:hidden" size="xl" variant="ghost" icon="i-heroicons-bars-3-20-solid"
+        <UButton square color="gray" class="lg:hidden mt-2 mb-2 mr-4" size="xl" variant="ghost" icon="i-heroicons-bars-3-20-solid"
           @click="isDialogOpen = true" />
 
         <HeaderLogo />
 
         <div class="flex items-center">
           <ClientOnly>
-            <UButton :icon="isDark ? 'i-heroicons-moon' : 'i-heroicons-sun'" color="gray" variant="ghost"
+            <UButton 
+            :icon="isDark ? 'i-heroicons-moon' : 'i-heroicons-sun'" 
+            class="mt-2 mb-2 ml-4"
+            color="gray" 
+            variant="ghost"
               aria-label="Theme" @click="isDark = !isDark" size="xl" square />
 
             <template #fallback>
@@ -124,6 +128,12 @@
 
 <script setup lang="ts">
 import { Dialog, DialogPanel, TransitionRoot, TransitionChild } from '@headlessui/vue'
+import colors from '#tailwind-config/theme/colors'
+
+const appConfig = useAppConfig()
+
+const primaryCookie = useCookie('primary', { path: '/', default: () => appConfig.ui.primary })
+const grayCookie = useCookie('gray', { path: '/', default: () => appConfig.ui.gray })
 
 // const { isSearchModalOpen } = useDocs()
 const isSearchModalOpen = ref(false)
@@ -133,6 +143,17 @@ const isDialogOpen2 = ref(false)
 
 //const isDialogOpen = ref(false)
 
+const grayOptions = computed(() => ['slate', 'cool', 'zinc', 'neutral', 'stone'].map(color => ({ value: color, text: color, hex: colors[color][colorMode.value === 'dark' ? 900 : 500] })))
+const gray = computed({
+  get () {
+    return grayOptions.value.find(option => option.value === appConfig.ui.gray)
+  },
+  set (option) {
+    console.log('GRAY-SET', option)
+    grayCookie.value = option.value
+  }
+})
+
 const isDark = computed({
   get() {
     return colorMode.value === 'dark'
@@ -141,6 +162,23 @@ const isDark = computed({
     colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
   }
 })
+
+const head = useHead({
+  meta: [{
+    id: 'theme-color',
+    name: 'theme-color',
+    content: () => {
+      console.log('useHead meta theme', colorMode.value, appConfig.ui.gray, gray.value)
+      return colorMode.value === 'dark' ? gray.value?.hex : '#ffffff'
+    },
+  }],
+})
+
+watch(grayCookie, (val) => {
+  console.log('watch gray cookie', val, head)
+  
+  //appConfig.ui.gray = gray
+}, { immediate: true })
 
 function openDocsSearch() {
   isDialogOpen.value = false
