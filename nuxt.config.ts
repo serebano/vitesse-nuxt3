@@ -2,9 +2,14 @@ import { pwa } from './config/pwa'
 import { appDescription } from './constants/index'
 
 export default defineNuxtConfig({
-  modules: ['@vueuse/nuxt', // '@unocss/nuxt',
-  '@pinia/nuxt', // '@nuxtjs/color-mode',
-  '@vite-pwa/nuxt', '@nuxthq/ui', 'nuxt-lodash'],
+  modules: [
+    '@vueuse/nuxt', // '@unocss/nuxt',
+    '@pinia/nuxt', // '@nuxtjs/color-mode',
+    '@vite-pwa/nuxt', 
+    '@nuxthq/ui', 
+    'nuxt-lodash',
+    '@nuxt/content'
+  ],
 
   ui: {
     global: true,

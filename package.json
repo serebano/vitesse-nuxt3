@@ -22,6 +22,7 @@
     "@iconify-json/carbon": "^1.1.16",
     "@iconify-json/simple-icons": "^1.1.54",
     "@iconify-json/twemoji": "^1.1.11",
+    "@nuxt/content": "^2.6.0",
     "@nuxt/devtools": "^0.5.5",
     "@nuxthq/ui": "^2.2.1",
     "@pinia/nuxt": "^0.4.11",
@@ -29,7 +30,7 @@
     "@vueuse/nuxt": "^10.1.2",
     "consola": "^3.1.0",
     "eslint": "^8.40.0",
-    "nuxt": "^3.5.1",
+    "nuxt": "^3.5.2",
     "nuxt-lodash": "^2.4.1",
     "pinia": "^2.0.36",
     "typescript": "^5.0.4"
