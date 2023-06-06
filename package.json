@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "postinstall": "nuxi prepare",
     "generate": "nuxi generate",
-    "start:generate": "npx serve .output/public"
+    "start:generate": "npx serve .output/public",
+    "generate-pwa-assets": "pwa-assets-generator --preset minimal public/ttdl-icon.svg"
   },
   "dependencies": {
     "@headlessui/vue": "^1.7.13",
@@ -24,13 +25,14 @@
     "@iconify-json/twemoji": "^1.1.11",
     "@nuxt/content": "^2.6.0",
     "@nuxt/devtools": "^0.5.5",
-    "@nuxthq/ui": "^2.2.1",
+    "@nuxthq/ui": "^2.3.0",
     "@pinia/nuxt": "^0.4.11",
-    "@vite-pwa/nuxt": "^0.0.7",
+    "@vite-pwa/assets-generator": "^0.0.1",
+    "@vite-pwa/nuxt": "^0.0.10",
     "@vueuse/nuxt": "^10.1.2",
     "consola": "^3.1.0",
     "eslint": "^8.40.0",
-    "nuxt": "^3.5.2",
+    "nuxt": "^3.5.3",
     "nuxt-lodash": "^2.4.1",
     "pinia": "^2.0.36",
     "typescript": "^5.0.4"

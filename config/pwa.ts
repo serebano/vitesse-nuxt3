@@ -16,22 +16,28 @@ export const pwa: ModuleOptions = {
     theme_color: '#ffffff',
     icons: [
       {
-        src: 'pwa-192x192.png',
+        src: 'icon-192.png',
         sizes: '192x192',
         type: 'image/png',
       },
       {
-        src: 'pwa-512x512.png',
+        src: 'icon-512.png',
         sizes: '512x512',
         type: 'image/png',
       },
       {
-        src: 'maskable-icon.png',
-        sizes: '512x512',
+        src: 'icon-192-maskable.png',
+        sizes: '192x192',
         type: 'image/png',
         purpose: 'any maskable',
       },
-    ],
+      {
+        src: 'icon-512-maskable.png',
+        sizes: '512x512',
+        type: 'image/png',
+        purpose: 'any maskable',
+      }
+    ]
   },
   workbox: {
     globPatterns: ['**/*.{js,css,html,txt,png,ico,svg}'],
@@ -74,5 +80,6 @@ export const pwa: ModuleOptions = {
   devOptions: {
     enabled: process.env.VITE_PLUGIN_PWA === 'true',
     navigateFallback: scope,
+    navigateFallbackAllowlist: [/^index.html$/]
   },
 }

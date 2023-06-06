@@ -2,14 +2,9 @@ import { pwa } from './config/pwa'
 import { appDescription } from './constants/index'
 
 export default defineNuxtConfig({
-  modules: [
-    '@vueuse/nuxt', // '@unocss/nuxt',
-    '@pinia/nuxt', // '@nuxtjs/color-mode',
-    '@vite-pwa/nuxt', 
-    '@nuxthq/ui', 
-    'nuxt-lodash',
-    '@nuxt/content'
-  ],
+  modules: [// '@unocss/nuxt',
+  '@vueuse/nuxt', // '@nuxtjs/color-mode',
+  '@pinia/nuxt', '@nuxthq/ui', 'nuxt-lodash', '@nuxt/content', '@vite-pwa/nuxt'],
 
   ui: {
     global: true,
@@ -59,7 +54,7 @@ export default defineNuxtConfig({
       viewport: 'width=device-width,initial-scale=1',
       link: [
         { rel: 'icon', href: '/favicon.ico', sizes: 'any' },
-        { rel: 'icon', type: 'image/svg+xml', href: '/nuxt.svg' },
+        { rel: 'icon', type: 'image/svg+xml', href: '/ttdl-icon.svg' },
         { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
       ],
       meta: [
